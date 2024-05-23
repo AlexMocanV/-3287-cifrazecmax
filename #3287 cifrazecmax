@@ -1,0 +1,25 @@
+#include <fstream>
+#include <unordered_map>
+
+using namespace std;
+using ui=unsigned int;
+
+ifstream cin("cifrazecmax.in");
+ofstream cout("cifrazecmax.out");
+int fr[10];
+int main()
+{
+    int x,maxi=0,nr=0,ord=0;
+    while(cin>>x)
+    {
+      nr++;
+      fr[(x/10)%10]++;
+      if(maxi<fr[(x/10)%10])
+      {
+        maxi=fr[(x/10)%10];
+        ord=nr;
+      }
+    }
+    cout<<ord;
+    return 0;
+}
